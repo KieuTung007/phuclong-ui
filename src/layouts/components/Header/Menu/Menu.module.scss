@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--height-menu-header);
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 1140px;
+    padding: 0 16px;
+}
+
+.nav {
+    display: inline-flex;
+    list-style: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    min-width: 40px;
+    height: var(--height-menu-header);
+    padding: 0 16px;
+    margin: 0 16px;
+    color: #666666;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary);
+    }
+}

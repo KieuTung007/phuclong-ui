@@ -2,7 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
 
 :root {
-    --primary: #fe2c55;
+    --primary: #006f3c;
+    --white: #fff;
+    --text-color: #171717;
+
+    --height-header-top: 69px;
+    --height-menu-header: 41px;
+    --height-heder: calc(
+        val(var(--height-header-top)) +var(--height-menu-header)
+    );
 }
 
 html {
