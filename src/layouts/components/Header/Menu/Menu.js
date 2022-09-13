@@ -3,7 +3,7 @@ import styles from './Menu.module.scss';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/themes/light-border.css';
 
-import { Wrapper as PopperWrapper } from '~/components/Popper';
+import { Wrapper as PopperWrapper } from '~/components/PopperWrapper';
 import {
     PopperCardMember,
     PopperCategory,
@@ -87,27 +87,14 @@ function Menu() {
                             <div className={cx('nav-item')}>SẢN PHẨM</div>
                         </Tippy>
                     </div>
+
+                    <div className={cx('nav-item')}>KHUYẾN MÃI</div>
+
                     <div>
                         <Tippy
                             interactive
-                            offset={[0, 10]}
-                            placement="bottom-start"
-                            render={(attrs) => (
-                                <div className="box-1" tabIndex="-1" {...attrs}>
-                                    <PopperWrapper>
-                                        <PopperPromotion />
-                                    </PopperWrapper>
-                                </div>
-                            )}
-                        >
-                            <div className={cx('nav-item')}>KHUYẾN MÃI</div>
-                        </Tippy>
-                    </div>
-                    <div>
-                        <Tippy
-                            interactive
-                            offset={[0, 10]}
-                            placement="bottom-start"
+                            offset={[-130, 10]}
+                            placement="bottom"
                             render={(attrs) => (
                                 <div className="box-1" tabIndex="-1" {...attrs}>
                                     <PopperWrapper>
@@ -121,9 +108,10 @@ function Menu() {
                     </div>
                     <div>
                         <Tippy
+                            arrow={true}
                             interactive
-                            offset={[0, 10]}
-                            placement="bottom-start"
+                            offset={[58, 10]}
+                            placement="bottom-end"
                             render={(attrs) => (
                                 <div className="box-1" tabIndex="-1" {...attrs}>
                                     <PopperWrapper>

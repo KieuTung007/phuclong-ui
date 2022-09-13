@@ -12,7 +12,7 @@ function PopperIntroduce() {
                     <li className={cx('item')}>Tầm nhìn</li>
                     <li className={cx('item')}>Sứ mệnh</li>
                     <li className={cx('item')}>Giá trị cốt lõi</li>
-                    <li className={cx('item')}>Lingx vực hoạt động</li>
+                    <li className={cx('item')}>Lĩnh vực hoạt động</li>
                 </ul>
                 <ul className={cx('list-item')}>
                     <h3 className={cx('heading')}>Tuyển Dụng</h3>

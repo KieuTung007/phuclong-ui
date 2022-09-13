@@ -7,9 +7,9 @@ function PopperCoffee() {
     return (
         <div className={cx('wrapper')}>
             <ul className={cx('container')}>
-                <li className={cx('content')}>Hành trình tách cà phê đậm vị</li>
-                <li className={cx('content')}>Hạt cà phê Phúc Long</li>
-                <li className={cx('content')}>Nghệ thuật pha chế</li>
+                <li className={cx('item')}>Hành trình tách cà phê đậm vị</li>
+                <li className={cx('item')}>Hạt cà phê Phúc Long</li>
+                <li className={cx('item')}>Nghệ thuật pha chế</li>
             </ul>
         </div>
     );

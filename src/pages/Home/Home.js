@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import Slider from '~/layouts/components/Slider';
 import styles from './Home.module.scss';
 
 const cx = classNames.bind(styles);
@@ -6,7 +7,9 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx('wrapper')}>
-            <h1>Home page</h1>
+            <div className={cx('slide')}>
+                <Slider />
+            </div>
         </div>
     );
 }

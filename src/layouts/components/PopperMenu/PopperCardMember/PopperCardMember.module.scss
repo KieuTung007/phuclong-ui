@@ -2,8 +2,7 @@
     display: flex;
     position: relative;
     justify-content: center;
-    width: 200px;
-    padding: 10px 0;
+    width: 760px;
     background-color: var(--white);
 
     ::after {
@@ -12,7 +11,7 @@
         width: 0;
         height: 0;
         top: -30px;
-        left: 24px;
+        right: 58px;
         display: block;
         border: 12px solid;
         border-color: transparent transparent var(--white) transparent;
@@ -20,22 +19,25 @@
 }
 
 .container {
-    justify-content: center;
-    width: 220px;
-    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     list-style: none;
+}
+
+.wrapper-list {
+    padding: 10px 20px;
 }
 
 .item {
     display: block;
-    width: 180px;
-    padding: 8px 16px;
+    min-width: 325px;
+    padding: 6px 16px;
     font-size: 1.6rem;
     color: var(--text-color);
     transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     cursor: pointer;
-
     &:hover {
         background-color: var(--primary);
         color: var(--white);

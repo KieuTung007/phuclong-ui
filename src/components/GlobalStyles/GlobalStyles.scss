@@ -8,9 +8,7 @@
 
     --height-header-top: 69px;
     --height-menu-header: 41px;
-    --height-heder: calc(
-        val(var(--height-header-top)) +var(--height-menu-header)
-    );
+    --height-heder: calc(var(--height-header-top) + var(--height-menu-header));
 }
 
 html {
