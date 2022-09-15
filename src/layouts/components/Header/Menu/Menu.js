@@ -3,6 +3,8 @@ import styles from './Menu.module.scss';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/themes/light-border.css';
 
+import configs from '~/configs';
+import MenuItem from './MenuItem';
 import { Wrapper as PopperWrapper } from '~/components/PopperWrapper';
 import {
     PopperCardMember,
@@ -21,7 +23,7 @@ function Menu() {
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
                 <div className={cx('nav')}>
-                    <div className={cx('nav-item')}>TRANG CHỦ</div>
+                    <MenuItem title="Trang chủ" to={configs.routes.home} />
                     <div>
                         <Tippy
                             interactive
@@ -35,7 +37,12 @@ function Menu() {
                                 </div>
                             )}
                         >
-                            <div className={cx('nav-item')}>CÀ PHÊ</div>
+                            <div>
+                                <MenuItem
+                                    title="Cà Phê"
+                                    to={configs.routes.coffee}
+                                />
+                            </div>
                         </Tippy>
                     </div>
                     <div>
@@ -51,7 +58,9 @@ function Menu() {
                                 </div>
                             )}
                         >
-                            <div className={cx('nav-item')}>TRÀ</div>
+                            <div>
+                                <MenuItem title="Trà" to={configs.routes.tea} />
+                            </div>
                         </Tippy>
                     </div>
                     <div>
@@ -67,7 +76,12 @@ function Menu() {
                                 </div>
                             )}
                         >
-                            <div className={cx('nav-item')}>THỨC UỐNG</div>
+                            <div>
+                                <MenuItem
+                                    title="Thức uống"
+                                    to={configs.routes.drinks}
+                                />
+                            </div>
                         </Tippy>
                     </div>
 
@@ -84,11 +98,19 @@ function Menu() {
                                 </div>
                             )}
                         >
-                            <div className={cx('nav-item')}>SẢN PHẨM</div>
+                            <div>
+                                <MenuItem
+                                    title="Sản Phẩm"
+                                    to={configs.routes.category}
+                                />
+                            </div>
                         </Tippy>
                     </div>
 
-                    <div className={cx('nav-item')}>KHUYẾN MÃI</div>
+                    <MenuItem
+                        title="Khuyến mãi"
+                        to={configs.routes.promotion}
+                    />
 
                     <div>
                         <Tippy
@@ -103,7 +125,12 @@ function Menu() {
                                 </div>
                             )}
                         >
-                            <div className={cx('nav-item')}>VỀ CHÚNG TÔI</div>
+                            <div>
+                                <MenuItem
+                                    title="Về Chúng Tôi"
+                                    to={configs.routes.introduce}
+                                />
+                            </div>
                         </Tippy>
                     </div>
                     <div>
@@ -120,7 +147,12 @@ function Menu() {
                                 </div>
                             )}
                         >
-                            <div className={cx('nav-item')}>THẺ</div>
+                            <div>
+                                <MenuItem
+                                    title="Thẻ"
+                                    to={configs.routes.cardMember}
+                                />
+                            </div>
                         </Tippy>
                     </div>
                 </div>

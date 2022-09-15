@@ -57,3 +57,24 @@
         color: var(--primary);
     }
 }
+
+.slide-bottom {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    font-size: 1.4rem;
+}
+
+.bottom-icon {
+    margin-left: 6px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.active {
+    border-radius: 50%;
+    color: var(--primary);
+    background-color: var(--primary);
+}

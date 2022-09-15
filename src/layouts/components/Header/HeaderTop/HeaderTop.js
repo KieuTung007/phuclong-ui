@@ -2,13 +2,52 @@ import classNames from 'classnames/bind';
 import styles from './HeaderTop.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from 'react';
 
 import images from '~/assets/images';
 import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
+const logoData = [
+    {
+        image: images.logo,
+    },
+    {
+        image: images.logo1,
+    },
+    {
+        image: images.logo2,
+    },
+];
 
 function HeaderTop() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const logoLength = logoData.length;
+    let slideInterval;
+    let logoIndex = logoData[currentIndex].image;
+
+    // currentSlide = 0 1 2
+    // slideLength= 1 2 3
+
+    const nextLogo = () => {
+        setCurrentIndex(currentIndex === logoLength - 1 ? 0 : currentIndex + 1);
+    };
+
+    useEffect(() => {
+        setCurrentIndex(0);
+    }, []);
+
+    useEffect(() => {
+        autoSide();
+        return () => clearInterval(slideInterval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentIndex]);
+
+    function autoSide() {
+        slideInterval = setInterval(nextLogo, 5000);
+    }
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -19,21 +58,20 @@ function HeaderTop() {
                 </div>
                 <div className={cx('logo')}>
                     <a className={cx('logo-link')} href="to">
-                        <img
-                            className={cx('logo-img')}
-                            src={images.logo}
-                            alt=""
-                        />
-                        {/* <img
-                            className={cx('logo-img')}
-                            src={images.logo1}
-                            alt=""
-                        />
-                        <img
-                            className={cx('logo-img')}
-                            src={images.logo2}
-                            alt=""
-                        /> */}
+                        {logoData.map((data, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    className={
+                                        index === currentIndex
+                                            ? cx('logo-img')
+                                            : cx('logo-hidden')
+                                    }
+                                >
+                                    <img src={data.image} alt="" />
+                                </div>
+                            );
+                        })}
                     </a>
                 </div>
                 <div className={cx('header-right')}>

@@ -5,3 +5,82 @@
 .slide {
     width: 100%;
 }
+
+// container
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.content {
+    margin: 0 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1170px;
+}
+
+.content-1 {
+    padding: 20px 0;
+}
+
+.content-2 {
+    padding: 80px 0 40px 0;
+}
+
+.image-1 {
+    width: 530px;
+    height: 530px;
+}
+
+.image-1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.image-2 {
+    width: 540px;
+    height: 475px;
+}
+
+.image-2 img {
+    width: 320px;
+    height: 475px;
+}
+
+.context {
+    width: 486px;
+    padding: 0 20px;
+}
+
+.heading {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--primary);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.text-break {
+    display: block;
+    margin: 16px 0;
+}
+
+.text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+//  Footer
