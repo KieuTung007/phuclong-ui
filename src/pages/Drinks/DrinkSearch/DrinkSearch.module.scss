@@ -6,6 +6,11 @@
     justify-content: center;
     width: 100%;
     height: var(--height-search);
+
+    & .container:nth-child(1),
+    .container:nth-child(2) {
+        margin-right: -1px;
+    }
 }
 
 .container {
@@ -16,8 +21,9 @@
     width: 33.3333%;
     border: 1px solid #ccc;
 }
-.container + .container {
-    margin-right: -1px;
+
+.container.container-two {
+    width: 50%;
 }
 
 .content {
@@ -83,6 +89,7 @@
     background-color: transparent;
     border-radius: 4px;
     border: 1px solid #999999;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 12px;
     cursor: pointer;
 }
 

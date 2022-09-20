@@ -8,72 +8,80 @@ import { Wrapper as PopperWrapper } from '~/components/PopperWrapper';
 
 const cx = classNames.bind(styles);
 
-function DrinkSearch() {
+function DrinkSearch({ hided }) {
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('container')}>
-                <div className={cx('content')}>
-                    <p className={cx('title')}>Nhóm sản phẩm</p>
-                    <div>
-                        <Tippy
-                            interactive
-                            trigger="click"
-                            offset={[0, 2]}
-                            placement="bottom-start"
-                            render={(attrs) => (
-                                <div
-                                    className="btn-tippy"
-                                    tabIndex="-1"
-                                    {...attrs}
-                                >
-                                    <PopperWrapper className="border">
-                                        <ul className={cx('list-item')}>
-                                            <li className={cx('item')}>
-                                                Chọn nhóm
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Phuc Long Signature
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Special Tea
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Hot Unique Loose Tea
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Cold Brew Tea
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Signature Coffee
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Fresh Squeezed fruit juice
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Relaxing fruit smoothie
-                                            </li>
-                                            <li className={cx('item')}>
-                                                Cool blended beverage
-                                            </li>
-                                        </ul>
-                                    </PopperWrapper>
-                                </div>
-                            )}
-                        >
-                            <button className={cx('product-group')}>
-                                <span className={cx('btn-title')}>
-                                    Chọn nhóm
-                                </span>
-                                <FontAwesomeIcon
-                                    className={cx('icon')}
-                                    icon={faCaretDown}
-                                />
-                            </button>
-                        </Tippy>
+            {hided === 0 && (
+                <div className={cx('container')}>
+                    <div className={cx('content')}>
+                        <p className={cx('title')}>Nhóm sản phẩm</p>
+                        <div>
+                            <Tippy
+                                interactive
+                                trigger="click"
+                                offset={[0, 2]}
+                                placement="bottom-start"
+                                render={(attrs) => (
+                                    <div
+                                        className="btn-tippy"
+                                        tabIndex="-1"
+                                        {...attrs}
+                                    >
+                                        <PopperWrapper className="border">
+                                            <ul className={cx('list-item')}>
+                                                <li className={cx('item')}>
+                                                    Chọn nhóm
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Phuc Long Signature
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Special Tea
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Hot Unique Loose Tea
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Cold Brew Tea
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Signature Coffee
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Fresh Squeezed fruit juice
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Relaxing fruit smoothie
+                                                </li>
+                                                <li className={cx('item')}>
+                                                    Cool blended beverage
+                                                </li>
+                                            </ul>
+                                        </PopperWrapper>
+                                    </div>
+                                )}
+                            >
+                                <button className={cx('product-group')}>
+                                    <span className={cx('btn-title')}>
+                                        Chọn nhóm
+                                    </span>
+                                    <FontAwesomeIcon
+                                        className={cx('icon')}
+                                        icon={faCaretDown}
+                                    />
+                                </button>
+                            </Tippy>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className={cx('container')}>
+            )}
+            <div
+                className={
+                    hided === 0
+                        ? cx('container')
+                        : cx('container', 'container-two')
+                }
+            >
                 <div className={cx('content')}>
                     <p className={cx('title')}>Theo giá</p>
                     <Tippy
@@ -111,7 +119,13 @@ function DrinkSearch() {
                     </Tippy>
                 </div>
             </div>
-            <div className={cx('container')}>
+            <div
+                className={
+                    hided === 0
+                        ? cx('container')
+                        : cx('container', 'container-two')
+                }
+            >
                 <div className={cx('content')}>
                     <p className={cx('title')}>Tìm kiếm</p>
                     <Tippy

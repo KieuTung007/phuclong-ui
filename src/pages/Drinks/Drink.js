@@ -57,7 +57,7 @@ function Drink() {
                         })}
                     </div>
                 </header>
-                <DrinkSearch />
+                <DrinkSearch hided={currentIndex} />
                 <div className={cx('content')}>
                     {drinkNav[currentIndex].page}
                 </div>
