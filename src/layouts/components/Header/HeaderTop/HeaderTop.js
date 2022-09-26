@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 
+import configs from '~/configs';
 import images from '~/assets/images';
 import Button from '~/components/Button';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 const logoData = [
@@ -25,7 +27,6 @@ function HeaderTop() {
 
     const logoLength = logoData.length;
     let slideInterval;
-    let logoIndex = logoData[currentIndex].image;
 
     // currentSlide = 0 1 2
     // slideLength= 1 2 3
@@ -45,7 +46,7 @@ function HeaderTop() {
     }, [currentIndex]);
 
     function autoSide() {
-        slideInterval = setInterval(nextLogo, 5000);
+        slideInterval = setInterval(nextLogo, 10000);
     }
 
     return (
@@ -57,7 +58,7 @@ function HeaderTop() {
                     </a>
                 </div>
                 <div className={cx('logo')}>
-                    <a className={cx('logo-link')} href="to">
+                    <Link className={cx('logo-link')} to={configs.routes.home}>
                         {logoData.map((data, index) => {
                             return (
                                 <div
@@ -72,7 +73,7 @@ function HeaderTop() {
                                 </div>
                             );
                         })}
-                    </a>
+                    </Link>
                 </div>
                 <div className={cx('header-right')}>
                     <div className={cx('setting')}>

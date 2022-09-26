@@ -7,6 +7,8 @@ import images from '~/assets/images';
 import {
     faChevronCircleLeft,
     faChevronCircleRight,
+    faChevronLeft,
+    faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-regular-svg-icons';
 
@@ -55,18 +57,18 @@ function Slider() {
     }, [currentSlide]);
 
     function autoSide() {
-        slideInterval = setInterval(nextSlide, 5000);
+        slideInterval = setInterval(nextSlide, 10000);
     }
 
     return (
         <div className={cx('wrapper')}>
             <FontAwesomeIcon
-                icon={faChevronCircleLeft}
+                icon={faChevronLeft}
                 className={cx('icon-left')}
                 onClick={prevSlide}
             />
             <FontAwesomeIcon
-                icon={faChevronCircleRight}
+                icon={faChevronRight}
                 className={cx('icon-right')}
                 onClick={nextSlide}
             />
